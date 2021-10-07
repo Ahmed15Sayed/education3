@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class='container'>
+            <article>
+                <h1>نبذه عن كليتي</h1>
+                <img src="education.png" alt="">
+                <p>أنشئت الكلية في عام 1991 م باعتبارها فرعا لكلية التربية (جامعة الإسكندرية) في محافظة مطروح، وبالقرار الوزاري رقم (436) لسنة 2013 م بتعديل بعض أحكام اللائحة التنفيذية لقانون تنظيم الجامعات بإضافة فرع مطروح لجامعة الإسكندرية، وبذلك انفصلت كلية التربية بمطروح عن إدارة كلية التربية (جامعة الإسكندرية)، وبقرار رئيس مجلس الوزراء رقم (1715) بتاريخ 3 سبتمبر 2018 م انفصلت جامعة مطروح عن جامعة الإسكندرية.
+
+                </p>
+            </article>
+            <aside>
+                <div class='info'>
+                    <h1>نبذه مختصره عني</h1>
+                    <img src="ahmed.jpg" alt="Ahmed Sayed">
+                <p>
+                    إسمي : أحمد سيد أحمد 
+                    <br>
+                    أنا طالب في كلية التربية أساسي أتعلم بعض المهارات مثل : 
+                    <ul>
+                        <li>كتابة الاكواد</li>
+                        <li>التعامل مع قواعد البيانات</li>
+                    </ul>
+                </p>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <script>
+        function chang() {
+            var head = document.getElementsByTagName('h1').item(0);
+            head.firstChild.data = 'this is a dinamic data';
+            var par = document.getElementsByTagName('p').item(0);
+            par.firstChild.data = 'this is a first paragraph';
+            var newText = document.createTextNode('this is a second text');
+            var newElement = document.createElement('p');
+            newElement.appendChild(newText);
+            par.parentNode.appendChild(newElement);
+            
+        }
+        function genrat_table(){
+            // create table
+            var table = document.createElement("table");
+            //create tr
+            for(var i=0 ; i<2 ; i++){
+                var row = document.createElement("tr");
+
+                // create cell
+                for(var j=0; j<2; j++){
+                    var td = document.createElement("td");
+
+                    //creare Text Node
+                    var myText = document.createTextNode('This Is A Testing Arera');
+
+                    //append the text inside the cell
+                    td.appendChild(myText);
+
+                    //append the cell into the row
+                    row.appendChild(td);
+                }
+                
+                //append the row into the table
+                table.appendChild(row);
+            }
+
+            //append the table to the document 
+            document.body.appendChild(table);
+
+            //set Attribute To the Ttable
+            table.setAttribute('border', "2px");
+
+        }
+        function chang_background(){
+            var my_par = document.querySelectorAll('p');
+
+           var  mypar = my_par[1];
+           var  mypar1 = my_par[2];
+           var  mypar2 = my_par[3];
+           var  mypar3 = my_par[4];
+
+            mypar.style.background = "red";
+            mypar1.style.background = "blue";
+            mypar2.style.background = "red";
+            mypar3.style.background = "blue";
+        }
+    </script>
+</body>
+</html>
